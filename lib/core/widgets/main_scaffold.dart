@@ -41,6 +41,11 @@ class MainScaffold extends StatelessWidget {
               label: 'Dashboard',
             ),
             BottomNavigationBarItem(
+              icon: Icon(Icons.inventory_2_outlined),
+              activeIcon: Icon(Icons.inventory_2_rounded),
+              label: 'Inventory',
+            ),
+            BottomNavigationBarItem(
               icon: Icon(Icons.person_outline_rounded),
               activeIcon: Icon(Icons.person_rounded),
               label: 'Profile',

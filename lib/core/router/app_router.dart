@@ -8,11 +8,16 @@ import '../../features/auth/presentation/screens/login_screen.dart';
 import '../../features/auth/presentation/screens/profile_screen.dart';
 import '../../features/auth/presentation/screens/splash_screen.dart';
 import '../../features/dashboard/presentation/screens/dashboard_screen.dart';
+import '../../features/inventory/presentation/screens/inventory_dashboard_screen.dart';
+import '../../features/inventory/presentation/screens/stock_list_screen.dart';
+import '../../features/inventory/presentation/screens/transaction_history_screen.dart';
+import '../../features/inventory/presentation/screens/adjustment_form_screen.dart';
 import '../widgets/main_scaffold.dart';
 
 // ─── Navigator Keys ───
 final _rootNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'root');
 final _dashboardNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'dashboard');
+final _inventoryNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'inventory');
 final _profileNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'profile');
 
 /// Application Router Provider
@@ -65,6 +70,32 @@ final appRouterProvider = Provider<GoRouter>((ref) {
               GoRoute(
                 path: '/',
                 builder: (context, state) => const DashboardScreen(),
+              ),
+            ],
+          ),
+          StatefulShellBranch(
+            navigatorKey: _inventoryNavigatorKey,
+            routes: [
+              GoRoute(
+                path: '/inventory',
+                builder: (context, state) =>
+                    const InventoryDashboardScreen(),
+                routes: [
+                  GoRoute(
+                    path: 'stock',
+                    builder: (context, state) => const StockListScreen(),
+                  ),
+                  GoRoute(
+                    path: 'transactions',
+                    builder: (context, state) =>
+                        const TransactionHistoryScreen(),
+                  ),
+                  GoRoute(
+                    path: 'adjustments',
+                    builder: (context, state) =>
+                        const AdjustmentFormScreen(),
+                  ),
+                ],
               ),
             ],
           ),

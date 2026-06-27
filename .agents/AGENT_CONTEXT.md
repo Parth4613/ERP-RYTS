@@ -41,12 +41,12 @@ running multiple simultaneous projects across cities.
 <!-- AGENT: Update this block at END of every session before stopping -->
 
 ```
-PHASE:         Phase 1 — Foundation (Completed)
-LAST_TASK:     Implement GoRouter configuration with auth listener redirect, nested StatefulShellRoute bottom nav scaffold, and main.dart entry point. Copied database migrations.
-NEXT_TASK:     Build Phase 2 — Inventory features (materials, stock balances, etc.)
+PHASE:         Phase 2 — Inventory (In Progress)
+LAST_TASK:     Implemented Phase 2 Inventory module: data models, repository, use cases, Riverpod providers, widgets, and 4 screens (Dashboard, Stock List, Transaction History, Adjustment Form). Integrated with router and bottom navigation.
+NEXT_TASK:     Implement Unit Tests for Phase 2 Inventory / Move to Phase 3 — Projects + Zones + BOQ
 BLOCKED_BY:    none
 LAST_AGENT:    Antigravity
-SESSION_DATE:  2026-06-27
+SESSION_DATE:  2026-06-28
 SUPABASE_REF:  tkijmttpqhiebmnkvdgv
 FLUTTER_PKG:   gas_company
 ```

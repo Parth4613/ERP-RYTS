@@ -13,7 +13,7 @@ ERP Build Progress
 | 1 | Project Management | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | 2 | BOQ Management | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | 3 | Material Request | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
-| 4 | Inventory | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| 4 | Inventory | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⬜ | 🔄 |
 | 5 | Store Issuance + PDF | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | 6 | Procurement / PR | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | 7 | Purchase / PO | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
@@ -100,5 +100,35 @@ Phase 16: AI Features
 - Begin Phase 2 — Inventory module implementation (materials, stock balances)
 **Decisions made:**
 - Grouped SQL migration scripts to mirror physical `.agents/migrations` distribution, mapped chronologically inside `supabase/migrations/`
+**Blockers:**
+- none
+
+### 2026-06-28 — [Agent: Antigravity]
+**Phase:** Phase 2 — Inventory (In Progress)
+**Completed:**
+- Created 7 data models for Inventory: `MaterialCategoryModel`, `MaterialModel`, `WarehouseModel`, `StockBalanceModel`, `StockTransactionModel`, `InventoryAdjustmentModel`, and `InventorySummaryModel` (mapping to the DB view).
+- Defined `InventoryRepository` interface and implemented `InventoryRepositoryImpl` using the Supabase client.
+- Implemented 5 use cases: `GetStockLevelsUseCase`, `GetLowStockItemsUseCase`, `GetTransactionsUseCase`, `RequestAdjustmentUseCase`, and `ApproveAdjustmentUseCase`.
+- Created Riverpod providers for stock levels, materials, transaction history, and adjustments, fully compatible with Riverpod 3.x.
+- Built 3 reusable UI widgets: `StockLevelCard` (with visual quantity distribution), `TransactionTile` (styled timeline entry), and `LowStockAlertWidget` (dashboard summary).
+- Built 4 screens: `InventoryDashboardScreen` (KPIs & actions), `StockListScreen` (searchable/filterable list with bottom sheet details), `TransactionHistoryScreen` (movement timeline), and `AdjustmentFormScreen` (form with add/remove toggles and validation).
+- Integrated the new Inventory tab into `main_scaffold.dart` and configured all sub-routes in `app_router.dart`.
+**Files created/modified:**
+- `lib/features/inventory/data/models/*` (7 files)
+- `lib/features/inventory/domain/repositories/inventory_repository.dart`
+- `lib/features/inventory/domain/usecases/*` (5 files)
+- `lib/features/inventory/data/repositories/inventory_repository_impl.dart`
+- `lib/features/inventory/presentation/providers/inventory_provider.dart`
+- `lib/features/inventory/presentation/widgets/*` (3 files)
+- `lib/features/inventory/presentation/screens/*` (4 files)
+- `lib/core/router/app_router.dart`
+- `lib/core/widgets/main_scaffold.dart`
+- `.agents/AGENT_CONTEXT.md`
+- `.agents/PROGRESS.md`
+**Next session must:**
+- Implement unit tests for the inventory use cases and repository.
+- Transition to Phase 3 — Projects + Zones + BOQ.
+**Decisions made:**
+- Adapted providers and notifiers to Riverpod 3.x where `AutoDisposeAsyncNotifier` and `StateProvider` are unified under `AsyncNotifier` and `Notifier` respectively.
 **Blockers:**
 - none
