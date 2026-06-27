@@ -3,13 +3,26 @@ Stack: Flutter + Supabase + Clean Architecture.
 
 MANDATORY: Read these files in order before writing any code:
 
-1. .agents/AGENT_CONTEXT.md       ← rules, roles, non-negotiables
-2. .agents/PROGRESS.md            ← what's done, what's next
-3. .agents/DECISIONS.md           ← locked decisions, do not re-debate
-4. .agents/modules/MODULE_MAP.md  ← full spec for all 16 modules
-5. .agents/RLS_PATTERNS.md        ← copy-paste RLS policies
-6. .agents/flutter/FLUTTER_PATTERNS.md  ← Flutter code structure
-7. .agents/ui/UI_SPEC.md          ← design tokens and components
+1.  .agents/AGENT_CONTEXT.md                        ← rules, roles, non-negotiables
+2.  .agents/PROGRESS.md                             ← what's done, what's next
+3.  .agents/DECISIONS.md                            ← locked decisions, do not re-debate
+4.  .agents/modules/MODULE_MAP.md                   ← full spec for all 16 modules
+5.  .agents/docs/erp-constitution.md                ← supreme law
+6.  .agents/docs/business-rules.md                  ← BR-001 to BR-037
+7.  .agents/docs/permissions-matrix.md              ← RBAC per module per role
+8.  .agents/docs/database-schema.md                 ← all tables with types
+9.  .agents/RLS_PATTERNS.md                         ← copy-paste RLS policies
+10. .agents/BUSINESS_RULES_SQL.md                   ← SQL triggers for every BR
+11. .agents/flutter/FLUTTER_PATTERNS.md             ← Flutter code structure
+12. .agents/ui/UI_SPEC.md                           ← design tokens and components
+13. .agents/context/NOTIFICATION_SYSTEM.md          ← DB triggers for notifications
+14. .agents/context/SETTINGS_MODULE.md              ← app_settings table spec
+15. .agents/context/TESTING_GUIDE.md                ← test patterns (required for DoD)
+16. .agents/context/DASHBOARD_QUERIES.md            ← dashboard SQL + Flutter code
+17. .agents/context/REALTIME_SUBSCRIPTIONS.md       ← Supabase Realtime patterns
+18. .agents/context/REPORT_SPEC.md                  ← all 7 report type specs
+19. .agents/context/SUPABASE_STORAGE_STRUCTURE.md   ← bucket names + storage service
+20. .agents/context/ADVANCED_FEATURES_SPEC.md       ← Phase 15 specs (if building Phase 15)
 
 Today's task: [DESCRIBE SPECIFIC TASK]
 Example tasks:

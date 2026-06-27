@@ -41,14 +41,14 @@ running multiple simultaneous projects across cities.
 <!-- AGENT: Update this block at END of every session before stopping -->
 
 ```
-PHASE:         Phase 1 — Foundation
-LAST_TASK:     [none — project start]
-NEXT_TASK:     Run phase1_foundation.sql, then build auth screens
+PHASE:         Phase 1 — Foundation (Completed)
+LAST_TASK:     Implement GoRouter configuration with auth listener redirect, nested StatefulShellRoute bottom nav scaffold, and main.dart entry point. Copied database migrations.
+NEXT_TASK:     Build Phase 2 — Inventory features (materials, stock balances, etc.)
 BLOCKED_BY:    none
-LAST_AGENT:    none
-SESSION_DATE:  [YYYY-MM-DD]
-SUPABASE_REF:  [your-project-ref]
-FLUTTER_PKG:   [your.package.name]
+LAST_AGENT:    Antigravity
+SESSION_DATE:  2026-06-27
+SUPABASE_REF:  tkijmttpqhiebmnkvdgv
+FLUTTER_PKG:   gas_company
 ```
 
 ---
@@ -58,18 +58,26 @@ FLUTTER_PKG:   [your.package.name]
 **Read every file in this order. Do not skip any.**
 
 ```
-1.  .agents/AGENT_CONTEXT.md              ← this file
-2.  .agents/PROGRESS.md                   ← what is done / what is next
-3.  .agents/DECISIONS.md                  ← locked decisions, never re-debate
-4.  .agents/modules/MODULE_MAP.md         ← full spec for all 16 modules
-5.  docs/erp-constitution.md              ← supreme law, overrides everything
-6.  docs/business-rules.md               ← BR-001 to BR-037 with SQL
-7.  docs/permissions-matrix.md           ← RBAC per module per role
-8.  docs/database-schema.md              ← all tables with types + indexes
-9.  .agents/RLS_PATTERNS.md              ← copy-paste RLS policies
-10. .agents/BUSINESS_RULES_SQL.md        ← triggers for every BR
-11. .agents/flutter/FLUTTER_PATTERNS.md  ← Flutter code conventions
-12. .agents/ui/UI_SPEC.md                ← design tokens, components, theme
+1.  .agents/AGENT_CONTEXT.md                        ← this file
+2.  .agents/PROGRESS.md                             ← what is done / what is next
+3.  .agents/DECISIONS.md                            ← locked decisions, never re-debate
+4.  .agents/modules/MODULE_MAP.md                   ← full spec for all 16 modules
+5.  .agents/docs/erp-constitution.md                ← supreme law, overrides everything
+6.  .agents/docs/business-rules.md                  ← BR-001 to BR-037 with SQL
+7.  .agents/docs/permissions-matrix.md              ← RBAC per module per role
+8.  .agents/docs/database-schema.md                 ← all tables with types + indexes
+9.  .agents/RLS_PATTERNS.md                         ← copy-paste RLS policies
+10. .agents/BUSINESS_RULES_SQL.md                   ← triggers for every BR
+11. .agents/flutter/FLUTTER_PATTERNS.md             ← Flutter code conventions
+12. .agents/ui/UI_SPEC.md                           ← design tokens, components, theme
+13. .agents/context/NOTIFICATION_SYSTEM.md          ← DB triggers for all notifications
+14. .agents/context/SETTINGS_MODULE.md              ← app_settings table + Settings screen
+15. .agents/context/TESTING_GUIDE.md                ← test patterns for all UseCases
+16. .agents/context/DASHBOARD_QUERIES.md            ← SQL + Flutter for executive dashboard
+17. .agents/context/REALTIME_SUBSCRIPTIONS.md       ← Supabase Realtime subscription patterns
+18. .agents/context/REPORT_SPEC.md                  ← all 7 report types with SQL + PDF layout
+19. .agents/context/SUPABASE_STORAGE_STRUCTURE.md   ← bucket names, paths, storage service
+20. .agents/context/ADVANCED_FEATURES_SPEC.md       ← Phase 15: QR, Barcode, Equipment, DPR
 ```
 
 ---
